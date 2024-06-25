@@ -12,11 +12,12 @@ export class SampleProjectPipelineStack extends cdk.Stack {
       synth: new ShellStep('synth', {
         input: CodePipelineSource.gitHub('topervillablanca/aws-pipeline-sample', 'master'),
         commands: [
-          'cd sample-project-pipeline-stack',
+          'cd sample-project-pipeline-stack', 
           'npm ci',
           'npm run build',
           'npm cdk synth'
-        ]
+        ],
+        primaryOutputDirectory: 'sample-project-pipeline-stack/cdk.out',
       })
     })
   }
