@@ -11,7 +11,7 @@ export class SampleProjectPipelineStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: "testPipeline",
       synth: new ShellStep('synth', {
-        input: CodePipelineSource.gitHub('topervillablanca/aws-pipeline-sample', 'master'),
+        input: CodePipelineSource.gitHub('topervillablanca/sample-react-app', 'master'),
         commands: [
           'npm ci',
           'npm run build',
